@@ -11,6 +11,7 @@
 		"compile:all": "bun run compileAllPlatforms.ts --outdir build",
 		"format": "prettier --write ."
 	},
+	"prettier": "prettier-config-a11y",
 	"devDependencies": {
 		"@types/bun": "latest",
 		"prettier": "^3.3.3",
@@ -21,8 +22,5 @@
 	},
 	"dependencies": {
 		"hono": "^4.5.6"
-	},
-	"patchedDependencies": {
-		"prettier-config-a11y@1.1.2": "patches/prettier-config-a11y@1.1.2.patch"
 	}
 }
