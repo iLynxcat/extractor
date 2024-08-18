@@ -1,0 +1,20 @@
+{
+	"name": "the-simplest-uploader",
+	"version": "1.0.0",
+	"private": true,
+	"module": "index.ts",
+	"type": "module",
+	"scripts": {
+		"dev": "bun run --hot index.ts",
+		"serve": "bun run index.ts"
+	},
+	"devDependencies": {
+		"@types/bun": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"hono": "^4.5.6"
+	}
+}
