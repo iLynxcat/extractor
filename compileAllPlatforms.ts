@@ -21,6 +21,6 @@ const SUPPORTED_TARGETS = [
 for (const target of SUPPORTED_TARGETS) {
 	await $`bun build --compile --target=${target} --outfile ${joinPath(
 		outDir,
-		`fileserver-${version}-${target}`
+		`fileserver-${version}-${target}`,
 	)} index.ts`;
 }

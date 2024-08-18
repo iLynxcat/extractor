@@ -5,12 +5,12 @@
  */
 export function getArgumentValue(
 	argument: string,
-	argv?: string[]
+	argv?: string[],
 ): string | null {
 	if (typeof argv === "undefined") argv = Bun.argv;
 
 	const argNameIndex = argv.findLastIndex((arg) =>
-			arg.startsWith(`--${argument}`)
+			arg.startsWith(`--${argument}`),
 		),
 		thisArg = argv[argNameIndex],
 		nextArg = argv[argNameIndex + 1];

@@ -1,7 +1,7 @@
 // Adapted from: https://stackoverflow.com/a/33362966
 export function filterAsync<T extends any = unknown>(
 	input: T[],
-	predicate: (value: T, index: number, arr: T[]) => Promise<boolean>
+	predicate: (value: T, index: number, arr: T[]) => Promise<boolean>,
 ): Promise<T[]> {
 	// Make a copy of the array, it might mutate by the time we've finished
 	const array = Array.from(input);

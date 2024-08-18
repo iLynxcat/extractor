@@ -8,15 +8,21 @@
 		"dev": "bun run --hot index.ts",
 		"serve": "bun run index.ts",
 		"compile": "bun build --outfile ./build/fileserver --compile index.ts",
-		"compile:all": "bun run compileAllPlatforms.ts --outdir build"
+		"compile:all": "bun run compileAllPlatforms.ts --outdir build",
+		"format": "prettier --write ."
 	},
 	"devDependencies": {
-		"@types/bun": "latest"
+		"@types/bun": "latest",
+		"prettier": "^3.3.3",
+		"prettier-config-a11y": "^1.1.2"
 	},
 	"peerDependencies": {
 		"typescript": "^5.0.0"
 	},
 	"dependencies": {
 		"hono": "^4.5.6"
+	},
+	"patchedDependencies": {
+		"prettier-config-a11y@1.1.2": "patches/prettier-config-a11y@1.1.2.patch"
 	}
 }

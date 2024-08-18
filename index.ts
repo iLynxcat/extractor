@@ -33,7 +33,7 @@ app
 
 		return stream(c, async (stream) => {
 			await stream.write(
-				"<body><h1>Upload status</h1><p>Receiving your file...</p>"
+				"<body><h1>Upload status</h1><p>Receiving your file...</p>",
 			);
 
 			const body = await c.req.parseBody();
@@ -41,7 +41,7 @@ app
 
 			if (!(file instanceof File)) {
 				await stream.write(
-					'<p>You did not submit a valid file. <a href="/">Retry!</a></p></body>'
+					'<p>You did not submit a valid file. <a href="/">Retry!</a></p></body>',
 				);
 				return;
 			}
@@ -55,7 +55,7 @@ app
 				await stream.write(
 					`<p>Could not receive ${
 						(<File>file).name
-					}. Check server for logs.<br><a href="/">Back to uploader</a></p></body>`
+					}. Check server for logs.<br><a href="/">Back to uploader</a></p></body>`,
 				);
 				return;
 			}
@@ -64,7 +64,7 @@ app
 			await stream.write(
 				`<p>Succesfully received ${
 					(<File>file).name
-				}<br><a href="/">Another!</a></p></body>`
+				}<br><a href="/">Another!</a></p></body>`,
 			);
 		});
 	});
@@ -78,7 +78,7 @@ app.get("/uploads", async (c) => {
 			const fileStat = await stat(`./uploads/${filename}`);
 
 			return !fileStat.isDirectory();
-		}
+		},
 	);
 
 	const rewriter = new HTMLRewriter().on("#file_list", {
@@ -88,7 +88,7 @@ app.get("/uploads", async (c) => {
 					`<li><a download="${filename}" href="/uploads/${filename}">${filename}</a></li>`,
 					{
 						html: true,
-					}
+					},
 				);
 			}
 		},
