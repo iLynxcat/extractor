@@ -7,7 +7,7 @@
 	"scripts": {
 		"dev": "bun run --hot index.ts",
 		"serve": "bun run index.ts",
-		"compile": "bun build --outfile ./build/fileserver --compile index.ts",
+		"compile": "bun build --compile --minify --sourcemap --outfile ./build/fileserver index.ts",
 		"compile:all": "bun run compileAllPlatforms.ts --outdir build",
 		"format": "prettier --write ."
 	},
