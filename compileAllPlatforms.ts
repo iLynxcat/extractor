@@ -1,5 +1,5 @@
 import { $ } from "bun";
-import { getArgumentValue } from "./parseArgv";
+import { getArgumentValue } from "./utils/parseArgv";
 import { join as joinPath } from "node:path";
 
 const outDir =

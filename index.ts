@@ -3,7 +3,8 @@ import { serveStatic } from "hono/bun";
 import { logger } from "hono/logger";
 import { stream } from "hono/streaming";
 import { readdir, stat } from "node:fs/promises";
-import { filterAsync } from "./filterAsync";
+import { filterAsync } from "./utils/filterAsync";
+import { catalogTemplate, indexTemplate } from "./html";
 
 const packageMeta = await import("./package.json");
 
@@ -25,9 +26,7 @@ app.use(logger());
 
 app
 	.get("/", async (c) => {
-		return c.html(
-			(await import("./index.html", { with: { type: "text" } })).default
-		);
+		return c.html(indexTemplate);
 	})
 	.post(async (c) => {
 		c.header("Content-type", "text/html");
@@ -95,9 +94,7 @@ app.get("/uploads", async (c) => {
 		},
 	});
 
-	return rewriter.transform(
-		c.html((await import("./catalog.html", { with: { type: "text" } })).default)
-	);
+	return rewriter.transform(c.html(catalogTemplate));
 });
 
 // you can technically access subfolders with this but they are unlisted.
