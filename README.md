@@ -5,9 +5,19 @@ machine with networking but no other way to directly share files through the
 hypervisor. (In this case, Windows XP via UTM.) The HTML is also super barebones
 because I'm supporting IE8 here, lol!
 
-## Setup
+## Standalone Setup
 
-To install dependencies:
+Download the latest binary for your platform from
+[Releases](https://github.com/ilynxcat/the-simplest-uploader/releases).
+
+Move the binary to a directory that you'd like to contain the `uploads/`
+directory.
+
+In a terminal, navigate to that directory then execute the binary.
+
+## Setup with Code
+
+After cloning repo, install dependencies:
 
 ```bash
 bun install
