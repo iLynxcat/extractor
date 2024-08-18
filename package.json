@@ -7,8 +7,8 @@
 	"scripts": {
 		"dev": "bun run --hot index.ts",
 		"serve": "bun run index.ts",
-		"compile": "bun build --outfile fileserver --compile index.ts",
-		"compile:all": "bun run compileAllPlatforms.ts"
+		"compile": "bun build --outfile ./build/fileserver --compile index.ts",
+		"compile:all": "bun run compileAllPlatforms.ts --outdir build"
 	},
 	"devDependencies": {
 		"@types/bun": "latest"

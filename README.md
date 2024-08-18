@@ -35,6 +35,22 @@ To develop:
 bun dev
 ```
 
+## Building
+
+Builds will output to the `build/` directory.
+
+To build for the current platform:
+
+```bash
+bun compile
+```
+
+To build for the all supported platforms:
+
+```bash
+bun compile:all
+```
+
 <small>This project was created using <code>bun init</code> in bun v1.1.20.
 <a href="https://bun.sh" target="_blank">Bun</a> is a fast all-in-one JavaScript
 runtime.</small>
