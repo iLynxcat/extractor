@@ -25,7 +25,9 @@ app.use(logger());
 
 app
 	.get("/", async (c) => {
-		return c.html(await Bun.file("./index.html").text());
+		return c.html(
+			(await import("./index.html", { with: { type: "text" } })).default
+		);
 	})
 	.post(async (c) => {
 		c.header("Content-type", "text/html");
@@ -93,7 +95,9 @@ app.get("/uploads", async (c) => {
 		},
 	});
 
-	return rewriter.transform(c.html(await Bun.file("./catalog.html").text()));
+	return rewriter.transform(
+		c.html((await import("./catalog.html", { with: { type: "text" } })).default)
+	);
 });
 
 // you can technically access subfolders with this but they are unlisted.

@@ -6,7 +6,8 @@
 	"type": "module",
 	"scripts": {
 		"dev": "bun run --hot index.ts",
-		"serve": "bun run index.ts"
+		"serve": "bun run index.ts",
+		"compile": "bun build --outfile fileserver --compile index.ts"
 	},
 	"devDependencies": {
 		"@types/bun": "latest"
